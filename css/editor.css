@@ -1,0 +1,402 @@
+/* ============================================
+   Editor Layout - Split View
+   ============================================ */
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+.editor-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-primary);
+}
+
+/* ============================================
+   Preview Pane (Left)
+   ============================================ */
+
+.preview-pane {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-medium);
+    min-width: 600px;
+}
+
+.preview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-lg);
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.preview-header h2 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+}
+
+.btn-open-preview {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-xs) var(--space-md);
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+}
+
+.btn-open-preview:hover {
+    background-color: var(--bg-tertiary);
+    border-color: var(--border-strong);
+    color: var(--text-primary);
+}
+
+.preview-wrapper {
+    flex: 1;
+    padding: var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+}
+
+.preview-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xl);
+}
+
+/* ============================================
+   Config Pane (Right)
+   ============================================ */
+
+.config-pane {
+    width: 420px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-primary);
+    overflow: hidden;
+}
+
+.config-header {
+    padding: var(--space-lg);
+    border-bottom: 1px solid var(--border-light);
+    background-color: var(--bg-secondary);
+}
+
+.config-header h1 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+}
+
+.config-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-lg);
+}
+
+/* Custom Scrollbar */
+.config-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.config-content::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+.config-content::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+    border-radius: 4px;
+}
+
+.config-content::-webkit-scrollbar-thumb:hover {
+    background: var(--border-strong);
+}
+
+/* ============================================
+   Config Sections
+   ============================================ */
+
+.config-section {
+    margin-bottom: var(--space-xl);
+    padding-bottom: var(--space-xl);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.config-section:last-child {
+    border-bottom: none;
+}
+
+.config-section h3 {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   Theme Selector
+   ============================================ */
+
+.theme-selector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.theme-option {
+    padding: var(--space-md);
+    border: 2px solid var(--border-medium);
+    border-radius: var(--radius-md);
+    background-color: var(--bg-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: center;
+}
+
+.theme-option:hover {
+    border-color: var(--border-strong);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.theme-option.active {
+    border-color: var(--accent-primary);
+    background-color: var(--bg-tertiary);
+    box-shadow: var(--shadow-md);
+}
+
+.theme-option .theme-preview {
+    width: 100%;
+    height: 40px;
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-xs);
+    display: flex;
+    gap: 2px;
+    overflow: hidden;
+}
+
+.theme-preview span {
+    flex: 1;
+}
+
+.theme-option .theme-name {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-primary);
+}
+
+/* ============================================
+   Import Group
+   ============================================ */
+
+.import-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.import-group textarea {
+    width: 100%;
+    padding: var(--space-sm);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-sm);
+    font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+    font-size: var(--font-size-sm);
+    resize: vertical;
+}
+
+/* ============================================
+   Color Grid
+   ============================================ */
+
+.color-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.color-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.color-item label {
+    flex: 1;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    font-weight: var(--font-weight-medium);
+}
+
+.color-item input[type="color"] {
+    width: 48px;
+    height: 32px;
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    background: none;
+}
+
+.color-item input[type="text"] {
+    width: 100px;
+    padding: var(--space-xs) var(--space-sm);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: var(--font-size-sm);
+    font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+    text-transform: uppercase;
+}
+
+/* ============================================
+   Font & Other Config Items
+   ============================================ */
+
+.font-config,
+.shadow-config,
+.radius-config {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+}
+
+.config-item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+.config-item label {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    font-weight: var(--font-weight-medium);
+}
+
+.config-item select {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+}
+
+.config-item input[type="range"] {
+    width: 100%;
+    height: 4px;
+    background: var(--border-medium);
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.config-item input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.config-item input[type="range"]::-webkit-slider-thumb:hover {
+    background: var(--accent-primary-hover);
+    transform: scale(1.1);
+}
+
+.config-item input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.value-display {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+    font-weight: var(--font-weight-medium);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+
+.btn-primary,
+.btn-secondary {
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    transition: all var(--transition-fast);
+}
+
+.btn-primary {
+    background-color: var(--accent-primary);
+    color: var(--text-inverse);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-primary-hover);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-medium);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-tertiary);
+    border-color: var(--border-strong);
+}
+
+/* ============================================
+   Action Buttons
+   ============================================ */
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--border-light);
+}

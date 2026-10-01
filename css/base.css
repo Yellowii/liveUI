@@ -1,0 +1,229 @@
+/* ============================================
+   CSS Variables - Theme System
+   ============================================ */
+
+:root {
+    /* Spacing System (8px grid) */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Typography */
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', sans-serif;
+    --font-size-xs: 11px;
+    --font-size-sm: 13px;
+    --font-size-base: 14px;
+    --font-size-lg: 16px;
+    --font-size-xl: 20px;
+    --font-size-2xl: 24px;
+    --font-size-3xl: 32px;
+
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* ============================================
+   Theme: macOS Light
+   ============================================ */
+[data-theme="macos-light"] {
+    --bg-primary: #f5f5f7;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #fafafa;
+    --bg-overlay: rgba(255, 255, 255, 0.85);
+
+    --text-primary: #1d1d1f;
+    --text-secondary: #6e6e73;
+    --text-tertiary: #86868b;
+    --text-inverse: #ffffff;
+
+    --border-light: rgba(0, 0, 0, 0.08);
+    --border-medium: rgba(0, 0, 0, 0.12);
+    --border-strong: rgba(0, 0, 0, 0.18);
+
+    --accent-primary: #007aff;
+    --accent-primary-hover: #0051d5;
+    --accent-secondary: #34c759;
+    --accent-danger: #ff3b30;
+    --accent-warning: #ff9500;
+
+    --live-badge: #ff3b30;
+    --viewer-bg: rgba(0, 0, 0, 0.5);
+
+    --backdrop-blur: blur(20px);
+}
+
+/* ============================================
+   Theme: macOS Dark
+   ============================================ */
+[data-theme="macos-dark"] {
+    --bg-primary: #1c1c1e;
+    --bg-secondary: #2c2c2e;
+    --bg-tertiary: #3a3a3c;
+    --bg-overlay: rgba(28, 28, 30, 0.85);
+
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1a6;
+    --text-tertiary: #8e8e93;
+    --text-inverse: #1d1d1f;
+
+    --border-light: rgba(255, 255, 255, 0.08);
+    --border-medium: rgba(255, 255, 255, 0.12);
+    --border-strong: rgba(255, 255, 255, 0.18);
+
+    --accent-primary: #0a84ff;
+    --accent-primary-hover: #409cff;
+    --accent-secondary: #30d158;
+    --accent-danger: #ff453a;
+    --accent-warning: #ff9f0a;
+
+    --live-badge: #ff453a;
+    --viewer-bg: rgba(255, 255, 255, 0.15);
+
+    --backdrop-blur: blur(20px);
+}
+
+/* ============================================
+   Theme: Streaming Pro
+   ============================================ */
+[data-theme="streaming-pro"] {
+    --bg-primary: #0f0f10;
+    --bg-secondary: #18181b;
+    --bg-tertiary: #1f1f23;
+    --bg-overlay: rgba(15, 15, 16, 0.9);
+
+    --text-primary: #efeff1;
+    --text-secondary: #adadb8;
+    --text-tertiary: #7d7d89;
+    --text-inverse: #0f0f10;
+
+    --border-light: rgba(255, 255, 255, 0.06);
+    --border-medium: rgba(255, 255, 255, 0.1);
+    --border-strong: rgba(255, 255, 255, 0.15);
+
+    --accent-primary: #9147ff;
+    --accent-primary-hover: #a970ff;
+    --accent-secondary: #00f593;
+    --accent-danger: #f13c5e;
+    --accent-warning: #ffb800;
+
+    --live-badge: #f13c5e;
+    --viewer-bg: rgba(145, 71, 255, 0.15);
+
+    --backdrop-blur: blur(16px);
+}
+
+/* ============================================
+   Theme: Minimal
+   ============================================ */
+[data-theme="minimal"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #fafafa;
+    --bg-tertiary: #f0f0f0;
+    --bg-overlay: rgba(255, 255, 255, 0.95);
+
+    --text-primary: #000000;
+    --text-secondary: #666666;
+    --text-tertiary: #999999;
+    --text-inverse: #ffffff;
+
+    --border-light: rgba(0, 0, 0, 0.06);
+    --border-medium: rgba(0, 0, 0, 0.1);
+    --border-strong: rgba(0, 0, 0, 0.15);
+
+    --accent-primary: #000000;
+    --accent-primary-hover: #333333;
+    --accent-secondary: #666666;
+    --accent-danger: #d32f2f;
+    --accent-warning: #f57c00;
+
+    --live-badge: #d32f2f;
+    --viewer-bg: rgba(0, 0, 0, 0.6);
+
+    --backdrop-blur: blur(10px);
+}
+
+/* ============================================
+   Global Reset & Base Styles
+   ============================================ */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.5;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: var(--font-weight-semibold);
+    line-height: 1.2;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    border: 1px solid var(--border-medium);
+    border-radius: var(--radius-sm);
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--accent-primary);
+}
+
+/* ============================================
+   Utility Classes
+   ============================================ */
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-tertiary { color: var(--text-tertiary); }
+
+.bg-primary { background-color: var(--bg-primary); }
+.bg-secondary { background-color: var(--bg-secondary); }
+.bg-tertiary { background-color: var(--bg-tertiary); }

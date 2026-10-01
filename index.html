@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="macos-light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>直播UI配置器</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/editor.css">
+</head>
+<body>
+    <div class="editor-container">
+        <!-- 左侧预览区 -->
+        <div class="preview-pane">
+            <div class="preview-header">
+                <h2>实时预览</h2>
+                <button class="btn-open-preview" id="openPreview">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M2 2h5v2H4v3H2V2zm9 0h3v5h-2V4h-1V2zM4 11v-1H2v5h5v-2H4v-2zm10-1v1h-3v2h5v-5h-2v2z"/>
+                    </svg>
+                    打开预览页
+                </button>
+            </div>
+            <div class="preview-wrapper">
+                <iframe id="previewFrame" src="preview.html"></iframe>
+            </div>
+        </div>
+
+        <!-- 右侧配置区 -->
+        <div class="config-pane">
+            <div class="config-header">
+                <h1>主题配置器</h1>
+            </div>
+
+            <div class="config-content">
+                <!-- 主题选择器 -->
+                <section class="config-section">
+                    <h3>预设主题</h3>
+                    <div class="theme-selector" id="themeSelector">
+                        <!-- 动态生成主题选项 -->
+                    </div>
+                    <button class="btn-secondary" id="saveAsNew">另存为新主题</button>
+                </section>
+
+                <!-- 批量导入 -->
+                <section class="config-section">
+                    <h3>快速导入</h3>
+                    <div class="import-group">
+                        <textarea id="colorImport" placeholder="粘贴颜色代码（支持 HEX、RGB、CSS变量）&#10;例如：&#10;#FF5733&#10;rgb(255, 87, 51)&#10;--primary: #FF5733" rows="3"></textarea>
+                        <button class="btn-secondary" id="importColors">导入颜色</button>
+                    </div>
+                </section>
+
+                <!-- 颜色配置 -->
+                <section class="config-section">
+                    <h3>配色方案</h3>
+                    <div class="color-grid" id="colorGrid">
+                        <!-- 动态生成颜色配置项 -->
+                    </div>
+                </section>
+
+                <!-- 字体配置 -->
+                <section class="config-section">
+                    <h3>字体设置</h3>
+                    <div class="font-config">
+                        <div class="config-item">
+                            <label>字体族</label>
+                            <select id="fontFamily">
+                                <option value="system-ui, -apple-system, sans-serif">System (默认)</option>
+                                <option value="'SF Pro Display', system-ui, sans-serif">SF Pro Display</option>
+                                <option value="'Inter', sans-serif">Inter</option>
+                                <option value="'Segoe UI', sans-serif">Segoe UI</option>
+                                <option value="'PingFang SC', 'Microsoft YaHei', sans-serif">PingFang SC</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label>基础字号</label>
+                            <input type="range" id="fontSize" min="12" max="20" value="14" step="1">
+                            <span class="value-display" id="fontSizeValue">14px</span>
+                        </div>
+                        <div class="config-item">
+                            <label>标题字重</label>
+                            <select id="fontWeightHeading">
+                                <option value="400">Regular (400)</option>
+                                <option value="500">Medium (500)</option>
+                                <option value="600" selected>Semibold (600)</option>
+                                <option value="700">Bold (700)</option>
+                            </select>
+                        </div>
+                        <div class="config-item">
+                            <label>正文字重</label>
+                            <select id="fontWeightBody">
+                                <option value="300">Light (300)</option>
+                                <option value="400" selected>Regular (400)</option>
+                                <option value="500">Medium (500)</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 阴影配置 -->
+                <section class="config-section">
+                    <h3>阴影效果</h3>
+                    <div class="shadow-config">
+                        <div class="config-item">
+                            <label>卡片阴影强度</label>
+                            <input type="range" id="shadowStrength" min="0" max="100" value="50" step="10">
+                            <span class="value-display" id="shadowStrengthValue">50%</span>
+                        </div>
+                        <div class="config-item">
+                            <label>阴影模糊半径</label>
+                            <input type="range" id="shadowBlur" min="0" max="40" value="20" step="5">
+                            <span class="value-display" id="shadowBlurValue">20px</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 圆角配置 -->
+                <section class="config-section">
+                    <h3>圆角设置</h3>
+                    <div class="radius-config">
+                        <div class="config-item">
+                            <label>小圆角</label>
+                            <input type="range" id="radiusSmall" min="0" max="16" value="6" step="2">
+                            <span class="value-display" id="radiusSmallValue">6px</span>
+                        </div>
+                        <div class="config-item">
+                            <label>大圆角</label>
+                            <input type="range" id="radiusLarge" min="0" max="24" value="12" step="2">
+                            <span class="value-display" id="radiusLargeValue">12px</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 操作按钮 -->
+                <div class="action-buttons">
+                    <button class="btn-primary" id="applyTheme">应用到预览页</button>
+                    <button class="btn-secondary" id="exportTheme">导出主题</button>
+                    <button class="btn-secondary" id="resetTheme">重置</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/theme-loader.js"></script>
+    <script src="js/theme-manager.js"></script>
+    <script src="js/editor.js"></script>
+</body>
+</html>

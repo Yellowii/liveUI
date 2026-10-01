@@ -1,0 +1,80 @@
+Canvas:
+  aspect_ratio: 16:9
+  coordinate_system: [x, y, width, height]
+  unit: percentage of Canvas
+
+整体:
+  stage: [0%, 0%, 100%, 100%]
+
+主区域(内部全透明留直播画面):
+  main_view: [3.125%, 6.481%, 69.271%, 86.574%]
+  right_container: [72.396%, 0%, 27.604%, 100%]
+
+顶部通知:
+  area: [0%, 0%, 72.396%, 6.481%]
+  layout: horizontal, 2 equal columns
+  column_1: [0%, 0%, 36.198%, 6.481%]
+  column_2: [36.198%, 0%, 36.198%, 6.481%]
+
+歌词:
+  area: [0%, 6.481%, 3.125%, 86.574%]
+  text_position: centered vertically and horizontally
+  layout: vertical, maximum 2 text rows
+
+字幕:
+  area: [0%, 93.056%, 72.396%, 6.944%]
+  layout: horizontal
+  text_position: vertically centered
+  text_width: remaining width after left icon area
+
+右侧信息容器:
+  area: [72.396%, 0%, 27.604%, 100%]
+  inner_margin_left: 2.83%
+  inner_width: 94.34%
+
+  top_header:
+    area: [73.177%, 0%, 26.042%, 5.556%]
+
+  上车卡片:
+    area: [73.177%, 6.481%, 26.042%, 52.778%]
+    layout: vertical
+
+    top_title_area:
+      height: 约 7%
+      width: 100%
+      layout: horizontal
+
+    middle_content_area:
+      height: 约 82%
+      width: 100%
+      layout: vertical list
+      item_layout: horizontal
+      item_height: equal
+
+    bottom_text_area:
+      height: 约 11%
+      width: 100%
+      layout: horizontal
+      text_position: vertically centered
+
+  点歌卡片:
+    area: [73.177%, 61.111%, 26.042%, 37.037%]
+    layout: vertical
+
+    top_title_area:
+      height: 约 18%
+      width: 100%
+      layout: horizontal
+
+    middle_content_area:
+      height: 约 60%
+      width: 100%
+      layout: vertical list
+      item_layout: horizontal
+      item_height: equal
+
+    bottom_text_area:
+      height: 约 22%
+      width: 100%
+      layout: horizontal
+      text_position: vertically centered

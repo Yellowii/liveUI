@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="macos-light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>直播预览</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/preview.css">
+</head>
+<body>
+    <div class="canvas-container">
+        <div class="canvas" id="liveCanvas">
+            <!-- 直播画面内容区域 -->
+            <div class="stream-overlay">
+                <div class="stream-info">
+                    <div class="viewer-count">
+                        <span class="icon">👁</span>
+                        <span class="count">1,234</span>
+                    </div>
+                    <div class="live-badge">LIVE</div>
+                </div>
+
+                <div class="stream-title">
+                    <h1>直播标题示例</h1>
+                    <p class="streamer-name">主播名称</p>
+                </div>
+
+                <div class="chat-messages">
+                    <div class="message">
+                        <span class="username">用户1:</span>
+                        <span class="text">欢迎来到直播间！</span>
+                    </div>
+                    <div class="message">
+                        <span class="username">用户2:</span>
+                        <span class="text">这个UI太好看了</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/theme-loader.js"></script>
+    <script src="js/preview.js"></script>
+</body>
+</html>
